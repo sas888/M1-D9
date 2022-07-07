@@ -98,6 +98,18 @@ console.log(strivifyStringTwo);
  HINT: Modulus Operator
 */
 
+const check3and7 = function (num) {
+  if (num > 0 && (num % 3 === 0 || num % 7 === 0)) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+const check3and7Num = check3and7(3);
+
+console.log(check3and7Num);
+
 /* EXERCISE 7
  Write a function called "reverseString" which programmatically reverses a given string (es.: Strive => evirtS).
 */
@@ -106,27 +118,56 @@ const reverseString = function (string) {
   return string.split("").reverse().join("");
 };
 
-const reverseStringTest = reverseString("I am a reversed string :)");
+console.log(reverseString("I am a reversed string :)"));
 
-console.log(reverseStringTest);
 /* EXERCISE 8
  Write a function called "upperFirst" which capitalizes the first letter of each word of a given string passed as a parameter.
 */
 
-/* WRITE YOUR ANSWER HERE */
+const upperFirst = function (str) {
+  return str
+    .split(" ")
+    .map((value) => value.slice(0, 1).toUpperCase() + value.slice(1))
+    .join(" ");
+};
+
+console.log(
+  upperFirst(
+    "capitalizes the first letter of each word of a given string passed as a parameter"
+  )
+);
 
 /* EXERCISE 9
  Write a function called "cutString" which creates a new string without the first and last character of a given string passed as a parameter.
 */
 
-/* WRITE YOUR ANSWER HERE */
+const cutString = function (string) {
+  return string.substring(1, string.length - 1);
+};
+
+console.log(cutString("cutme"));
+
+const cutStringTwo = (string) => {
+  return string.slice(1, string.length - 1);
+};
+
+const cutStringTwoWord = cutString("string");
+
+console.log(cutStringTwoWord);
 
 /* EXERCISE 10
  Write a function called "giveMeRandom" which accepts a number n and returns an array containing n random numbers between 0 and 10.
 */
 
-/* WRITE YOUR ANSWER HERE */
+const giveMeRandom = function (n) {
+  let arryRandom = [];
+  for (let i = 0; i < n; i++) {
+    arryRandom.push(Math.floor(Math.random() * 10));
+  }
+  return arryRandom;
+};
 
+console.log(giveMeRandom(8));
 /* WHEN YOU ARE FINISHED
  Commit and push the code to your personal GitHub repository; then post the link of your commit on the Homework section of today's Eduflow.
 */
